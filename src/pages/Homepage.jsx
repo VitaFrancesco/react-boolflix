@@ -6,8 +6,12 @@ export default function Homepage() {
     const { tvSeries, movies } = useContext(ResearchContext);
     return (
         <main>
-            <ListPoster list={movies} type={'Film'} />
-            <ListPoster list={tvSeries} type={'Serie TV'} />
+            <section>
+                <ListPoster list={movies} type={'Film'} />
+            </section>
+            <section>
+                <ListPoster list={tvSeries} type={'Serie TV'} />
+            </section>
         </main>
     )
 }
