@@ -1,0 +1,49 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.language {
+    max-width: 20px;
+}
+
+.card {
+    overflow: hidden;
+    aspect-ratio: 2/3;
+    border: 1px solid white;
+
+    >img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        aspect-ratio: 2/3;
+    }
+
+    .info {
+        display: none;
+    }
+}
+
+.card:hover {
+    background-color: black;
+    padding: 20px 8px;
+    overflow: auto;
+    cursor: pointer;
+
+    >img {
+        display: none;
+    }
+
+    .info {
+        display: block;
+    }
+}
+
+.grey {
+    color: grey;
+}
+
+.yellow {
+    color: yellow;
+}

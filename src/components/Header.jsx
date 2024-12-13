@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import ResearchContext from "../contexts/ResearchContext";
+import style from "./Header.module.css"
 
 export default function Header() {
     const [search, setSearch] = useState('');
@@ -10,10 +11,16 @@ export default function Header() {
         setReSearch(search)
         setSearch('')
     }
+
     return (
-        <form onSubmit={(e) => research(e)}>
-            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="cerca..." />
-            <button>cerca</button>
-        </form>
+        <header>
+            <nav className={style.nav}>
+                <img className={style.logo} src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="" />
+                <form onSubmit={(e) => research(e)}>
+                    <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="cerca..." />
+                    <button>cerca</button>
+                </form>
+            </nav>
+        </header>
     )
 }

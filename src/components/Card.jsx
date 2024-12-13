@@ -11,23 +11,20 @@ export default function Card({ obj }) {
     const star = [0, 0, 0, 0, 0]
     return (
         <div className="col">
-            <div className="card">
-                <div className="poster">
-                    <img src={obj.poster_path ? poster : '/placeholder.jpg'} alt="#" />
-                </div>
-                <div className="info">
-                    <h3>{obj.title}</h3>
-                    <h4 className={obj.original_title !== obj.title ? '' : 'dNone'}>{obj.original_title}</h4>
-                    <div>
-                        {flag ? <img src={flag} alt="#" /> : <p>{obj.original_language}</p>}
-                    </div>
-                    <div className="vote">{
+            <div className={style.card}>
+                <img className={style.poster} src={obj.poster_path ? poster : '/placeholder.jpg'} alt="#" />
+                <div className={style.info}>
+                    <p><strong>Titolo: </strong>{obj.title}</p>
+                    <p className={obj.original_title !== obj.title ? '' : 'dNone'}><strong>Titolo originale: </strong>{obj.original_title}</p>
+                    {flag ? <img className={style.language} src={flag} alt="#" /> : <p>{obj.original_language}</p>}
+                    <p><strong>Voto: </strong>{
                         star.map((el, i) => {
                             return (
-                                <FontAwesomeIcon key={i} className={i > vote ? 'black' : 'yellow'} icon="fa-solid fa-star" />
+                                <FontAwesomeIcon key={i} className={i > vote ? style.grey : style.yellow} icon="fa-solid fa-star" />
                             )
                         })
-                    }</div>
+                    }</p>
+                    <p><strong>Overview: </strong>{obj.overview}</p>
                 </div>
             </div>
         </div>
