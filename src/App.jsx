@@ -5,6 +5,10 @@ import Homepage from "./pages/Homepage"
 import ResearchContext from './contexts/ResearchContext'
 import axios from 'axios'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+library.add(faStar)
+
 function App() {
   const [reSearch, setReSearch] = useState('');
   const [movies, setMovies] = useState([]);
