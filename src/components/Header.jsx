@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import ResearchContext from "../contexts/ResearchContext";
 
 export default function Header() {
     const [search, setSearch] = useState('');
-    const [reSearch, setReSearch] = useState('');
+    const { reSearch, setReSearch } = useContext(ResearchContext);
 
     function research(e) {
         e.preventDefault();
-        const arraySearch = search.split(' ' || ',');
-        setReSearch(arraySearch.join('+'))
+        setReSearch(search)
+        setSearch('')
     }
     return (
         <form onSubmit={(e) => research(e)}>
             <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="cerca..." />
             <button>cerca</button>
-            <div>{reSearch}</div>
         </form>
     )
 }
