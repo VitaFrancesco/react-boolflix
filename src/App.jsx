@@ -18,11 +18,19 @@ function App() {
   const tvSeriesUrl = 'https://api.themoviedb.org/3/search/tv';
 
   const [languages, setLanguages] = useState({});
+  const [genres, setGenres] = useState([])
 
   useEffect(() => {
     axios.get('https://flagcdn.com/en/codes.json').then((res) => {
       setLanguages(res.data)
     }).catch((err) => console.error(err))
+    axios.get('https://api.themoviedb.org/3/genre/movie/list', {
+      params: {
+        api_key,
+      }
+    }).then((res) => {
+      setGenres(res.data.genres);
+    })
   }, [])
 
   useEffect(() => {
@@ -51,14 +59,13 @@ function App() {
           }
         })
         setTvSeries(mappedSeries)
-        console.log(tvSeries)
       }).catch((err) => console.error(err))
 
   }, [reSearch])
 
 
   return (
-    <ResearchContext.Provider value={{ reSearch, setReSearch, movies, tvSeries, languages }}>
+    <ResearchContext.Provider value={{ reSearch, setReSearch, movies, setMovies, tvSeries, setTvSeries, languages, genres }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>

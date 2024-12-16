@@ -1,0 +1,45 @@
+.check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(31, 30, 30);
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px black;
+}
+
+.col {
+    padding: 8px;
+    width: 20%;
+}
+
+input,
+label {
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .col {
+        width: 25%;
+    }
+}
+
+@media (max-width: 640px) {
+    .col {
+        width: 33.33%;
+    }
+}
+
+@media (max-width: 480px) {
+    .col {
+        width: 50%;
+    }
+}
+
+@media (max-width: 320px) {
+    .col {
+        max-width: 180px;
+        width: 100%;
+    }
+}

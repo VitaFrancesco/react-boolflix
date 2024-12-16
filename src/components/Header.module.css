@@ -10,3 +10,21 @@
 .logo {
     height: 20px;
 }
+
+.search {
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 3px solid gray;
+    border-right: none;
+}
+
+.send {
+    padding: 5px 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 3px solid gray;
+    border-left: none;
+    background-color: rgb(65, 62, 62);
+    color: white;
+}
