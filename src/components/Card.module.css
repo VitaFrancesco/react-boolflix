@@ -36,3 +36,29 @@
 .yellow {
     color: yellow;
 }
+
+
+/* prova per fare le stelle metà gialle metà grigie senza avere icone già fatte */
+.mid {
+    width: 10px;
+    overflow: hidden;
+
+    >* {
+        width: 20px;
+    }
+
+}
+
+.mid.negative {
+    >* {
+        margin-left: -10.3px;
+    }
+}
+
+.dFlex {
+    display: flex;
+}
+
+.dFlex.gap {
+    gap: 5px;
+}
