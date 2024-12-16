@@ -65,7 +65,7 @@ function App() {
 
 
   return (
-    <ResearchContext.Provider value={{ reSearch, setReSearch, movies, setMovies, tvSeries, setTvSeries, languages, genres }}>
+    <ResearchContext.Provider value={{ reSearch, setReSearch, movies, tvSeries, languages, genres }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
